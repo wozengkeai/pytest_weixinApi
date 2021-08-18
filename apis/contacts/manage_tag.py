@@ -12,7 +12,7 @@ class ManageTag(BaseAPI):
         logging.info("Init department management API")
         # 确定应用名与token配置文件地址
         application_name = "contacts"
-        token_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/contacts_access_token.yaml"
+        token_path = "F:/Weixin_InterfaceTest/config/contacts_access_token.yaml"
         # 判断 token 是否过期，如果过期自动重新请求
         self.judgment_access_token_is_valid(application_name, token_path)
         # 获取最新的 access_token
@@ -47,7 +47,112 @@ class ManageTag(BaseAPI):
                 "tagid": tagid
             }
             logging.debug("url:" + str(url))
-            logging.debug("paramas:" + str(params))
+            logging.debug("params:" + str(params))
             with allure.step("发出更新标签名字的请求"):
                 self.send_post_json(url,json_obj=data,params=params)
 
+    #获取标签列表
+    def get_tag_list(self):
+        with allure.step("获取标签列表的请求参数"):
+            url = self.yaml_data["contacts"]["tag"]["get_tag_list"]
+            params = {
+                "access_token": self.access_token
+            }
+            with allure.step("发出获取标签列表的请求"):
+                self.send_get(url,params=params)
+
+    #获取标签成员
+    def get_tag_member(self,tagid):
+        with allure.step("获取标签成员的请求参数"):
+            url = self.yaml_data["contacts"]["tag"]["get_tag_mem"]
+            params = {
+                "access_token": self.access_token,
+                "tagid": tagid
+            }
+            logging.debug("url:" + str(url))
+            logging.debug("params:" + str(params))
+            with allure.step("发出获取标签成员的请求"):
+                self.send_get(url,params=params)
+
+    #增加标签成员
+    def add_tag_member(self,tagid,userlist=None,partylist=None):
+        with allure.step("获取增加标签成员的请求参数"):
+            url = self.yaml_data["contacts"]["tag"]["add_tag_mem"]
+            params = {
+                "access_token": self.access_token,
+            }
+            if userlist and partylist :
+                data = {
+                    "tagid": tagid,
+                    "userlist": userlist,
+                    "partylist": partylist
+                }
+            elif userlist == None and partylist != None:
+                data = {
+                    "tagid": tagid,
+                    # "userlist": userlist,
+                    "partylist": partylist
+                }
+            elif userlist != None and partylist == None:
+                data = {
+                    "tagid": tagid,
+                    "userlist": userlist,
+                    # "partylist": partylist
+                }
+            else:
+                data = {
+                    "tagid": tagid,
+                    # "userlist": userlist,
+                    # "partylist": partylist
+                }
+            logging.debug("url:" + str(url))
+            logging.debug("paramas:" + str(params))
+            with allure.step("发起增加标签成员的请求"):
+                self.send_post_json(url,json_obj=data,params=params)
+
+    #删除标签成员
+    def delete_tag_member(self,tagid,userlist=None,partylist=None):
+        with allure.step("获取删除标签成员的请求参数"):
+            url = self.yaml_data["contacts"]["tag"]["delete_tag_mem"]
+            params = {
+                "access_token": self.access_token,
+            }
+            if userlist and partylist:
+                data = {
+                    "tagid": tagid,
+                    "userlist": userlist,
+                    "partylist": partylist
+                }
+            elif userlist == None and partylist != None:
+                data = {
+                    "tagid": tagid,
+                    # "userlist": userlist,
+                    "partylist": partylist
+                }
+            elif userlist != None and partylist == None:
+                data = {
+                    "tagid": tagid,
+                    "userlist": userlist,
+                    # "partylist": partylist
+                }
+            else:
+                data = {
+                    "tagid": tagid,
+                    # "userlist": userlist,
+                    # "partylist": partylist
+                }
+            with allure.step("发出删除标签成员的请求"):
+                self.send_post_json(url,json_obj=data,params=params)
+
+    # 删除标签
+    def delete_tag(self, tagid):
+        with allure.step("获取删除标签的请求参数"):
+            url = self.yaml_data["contacts"]["tag"]["delete_tag_url"]
+            params = {
+                "access_token": self.access_token,
+                "tagid": tagid
+            }
+            logging.debug("url:" + str(url))
+            logging.debug("paramas:" + str(params))
+            with allure.step("发出删除标签的请求"):
+                self.send_get(url, params=params)

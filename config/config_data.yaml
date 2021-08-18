@@ -33,6 +33,6 @@ contacts:
     delete_tag_url: https://qyapi.weixin.qq.com/cgi-bin/tag/delete
     get_tag_mem: https://qyapi.weixin.qq.com/cgi-bin/tag/get
     add_tag_mem: https://qyapi.weixin.qq.com/cgi-bin/tag/addtagusers
-    delete_tag_men: https://qyapi.weixin.qq.com/cgi-bin/tag/deltagusers
+    delete_tag_mem: https://qyapi.weixin.qq.com/cgi-bin/tag/deltagusers
     get_tag_list: https://qyapi.weixin.qq.com/cgi-bin/tag/list
 

@@ -15,7 +15,7 @@ class BaseAPI(object):
         self.cf = CommonFunction()
         # 配置文件路径
         with allure.step("获取配置文件路径"):
-            file_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/config_data.yaml"
+            file_path = "F:/Weixin_InterfaceTest/config/config_data.yaml"
         # 获取配置文件内容
         with allure.step("获取配置文件内容"):
             self.yaml_data = self.cf.get_yaml_data(file_path)
@@ -77,5 +77,5 @@ class BaseAPI(object):
 if __name__ == "__main__":
     base = BaseAPI()
     application_name = "contacts"
-    token_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/contacts_access_token.yaml"
+    token_path = "F:/Weixin_InterfaceTest/config/contacts_access_token.yaml"
     base.judgment_access_token_is_valid(application_name, token_path)
