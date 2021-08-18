@@ -14,7 +14,7 @@ class TestDepartment(object):
     @allure.title("test_creat_member")  #标题，代替函数名
     @allure.story("创建新成员")
     def test_creat_member(self):
-        file_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/member_data/creat_member.yaml"
+        file_path = "F:/Weixin_InterfaceTest/config/member_data/creat_member.yaml"
         cf = CommonFunction()
         yaml_data = cf.get_yaml_data(file_path)
         member_info = yaml_data["member_info"]["request"]
@@ -50,7 +50,7 @@ class TestDepartment(object):
     @allure.story("测试更新成员信息")
     def test_update_member(self):
         mm = ManageMember()
-        file_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/member_data/update_member.yaml"
+        file_path = "F:/Weixin_InterfaceTest/config/member_data/update_member.yaml"
         cf = CommonFunction()
         yaml_data = cf.get_yaml_data(file_path)
         update_mem_info = yaml_data["new_member_info"]["request"]

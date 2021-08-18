@@ -25,7 +25,7 @@ class CommonFunction(object):
     # 将内容写入 yaml 文件
     def write_yaml(self, file_name, content):
         # 确定 yaml 文件的写入路径
-        config_path = "F:/InterfaceTest/Weixin_InterfaceTest/config"
+        config_path = "F:/Weixin_InterfaceTest/config"
         yamlpath = os.path.join(config_path, file_name)
 
         # 写入到yaml文件
@@ -59,7 +59,7 @@ class CommonFunction(object):
 
 
 if __name__ == "__main__":
-    file_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/config_data.yaml"
+    file_path = "F:/Weixin_InterfaceTest/config/config_data.yaml"
     cf = CommonFunction()
     yaml_data = cf.get_yaml_data(file_path)
     # print(yaml_data.get("contacts").get("department").get("creat_department").get("creat_dep_url"))

@@ -15,7 +15,7 @@ class ManageDepartment(BaseAPI):
         logging.info("Init department management API")
         # 确定应用名与token配置文件地址
         application_name = "contacts"
-        token_path = "F:/InterfaceTest/Weixin_InterfaceTest/config/contacts_access_token.yaml"
+        token_path = "F:/Weixin_InterfaceTest/config/contacts_access_token.yaml"
         # 判断 token 是否过期，如果过期自动重新请求
         self.judgment_access_token_is_valid(application_name, token_path)
         # 获取最新的 access_token
