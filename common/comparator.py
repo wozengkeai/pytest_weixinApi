@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-14 16:12
-# @Author  : FangYuan
 # @File    : comparator.py
 import logging
 import pytest

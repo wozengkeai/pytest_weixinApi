@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019-04-07 10:47
-# @Author  : FangYuan
-# @File    : common_function.py
 import os
 import random
 

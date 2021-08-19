@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-07 18:21
-# @Author  : FangYuan
 # @File    : test_department.py
 import pytest
 import logging

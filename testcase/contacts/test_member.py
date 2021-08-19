@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019-04-14 12:03
-# @Author  : FangYuan
-# @File    : test_member.py
 import pytest
 import logging
 # from allure import MASTER_HELPER as allure

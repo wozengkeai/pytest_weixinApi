@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019-04-07 18:49
-# @Author  : FangYuan
-# @File    : manage_member.py
 import logging
 # from allure import MASTER_HELPER as allure
 from apis.base_api import BaseAPI

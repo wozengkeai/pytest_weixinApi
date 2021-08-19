@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-07 15:20
-# @Author  : FangYuan
 # @File    : manage_department.py
 import logging
 # from allure import MASTER_HELPER as allure

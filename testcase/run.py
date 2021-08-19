@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019-04-07 17:16
-# @Author  : FangYuan
 # @File    : run.py
 import sys
 import os
